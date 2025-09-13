@@ -1,2 +1,417 @@
-hello MIR!
-<h2>Manera Krutit Mir!</h2>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме Джона Джонса Нурмагомедовича</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0d1f0e;
+            color: #e8f5e9;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1b3c1d 0%, #2d5e30 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #8bc34a;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #8bc34a;
+            margin: 0 auto 20px;
+            background-color: #2d5e30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .profile-img i {
+            font-size: 80px;
+            color: #c8e6c9;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #c8e6c9;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #8bc34a;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            color: #c8e6c9;
+            margin: 15px 0 8px;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            color: #a5d6a7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 20px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(139, 195, 74, 0.15);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(139, 195, 74, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        .contact-item i {
+            color: #8bc34a;
+            font-size: 1.2rem;
+        }
+        
+        section {
+            background: rgba(29, 53, 30, 0.8);
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #8bc34a;
+        }
+        
+        .date {
+            color: #a5d6a7;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .skill {
+            background: rgba(76, 175, 80, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .skill:hover {
+            background: rgba(76, 175, 80, 0.25);
+            transform: scale(1.03);
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #1b3c1d;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #8bc34a, #4caf50);
+            border-radius: 4px;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .project {
+            background: rgba(29, 53, 30, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid #4caf50;
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .project h3 {
+            color: #8bc34a;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            background: #1b3c1d;
+            color: #a5d6a7;
+            border-top: 3px solid #8bc34a;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skills-grid, .projects {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-img">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <h1>Джон Джонс Нурмагомедович</h1>
+            <p class="tagline">Магистр магических наук и инженерии</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>john.jones@magic.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+7 (999) 123-45-67</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Москва, Россия</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p>Магистр магических наук с более чем 20-летним опытом применения магических технологий в современной инженерии. Сочетаю глубокие знания магических искусств, полученные в Хогвартсе, с технической экспертизой в области точного машиностроения. Способен решать сложные технические задачи с применением нетрадиционных подходов.</p>
+        </section>
+
+        <section id="education">
+            <h2>Образование</h2>
+            <div class="education-item">
+                <h3>Магистр магических наук</h3>
+                <p class="date">1994 - 2001</p>
+                <p>Хогвартс, Школа Чародейства и Волшебства</p>
+                <p>Специализация: Защита от темных искусств и трансфигурация</p>
+            </div>
+            <div class="education-item">
+                <h3>Магистр технических наук</h3>
+                <p class="date">2001 - 2006</p>
+                <p>МГТУ СТАНКИН, Москва</p>
+                <p>Факультет: Информационные технологии и системы управления</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Опыт работы</h2>
+            <div class="experience-item">
+                <h3>Старший инженер-маг</h3>
+                <p class="date">2015 - настоящее время</p>
+                <p>ООО "Магические технологии"</p>
+                <p>Разработка и внедрение магически усовершенствованных систем управления. Руководство отделом из 10 инженеров. Внедрил технологии левитации для уменьшения трения в высокоточных механизмах.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Инженер-чародей</h3>
+                <p class="date">2006 - 2015</p>
+                <p>НИИ "Станкомагия"</p>
+                <p>Разработка систем с применением магических артефактов для повышения точности станков. Создал систему предсказания износа деталей с точностью 99.7%.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Навыки</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Магическая инженерия</span>
+                        <span>98%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 98%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Трансфигурация материалов</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Защита от темных искусств</span>
+                        <span>99%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 99%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Колдование на Python</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 92%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Зельеварение</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Управление магическими проектами</span>
+                        <span>96%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 96%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Ключевые проекты</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Система самовосстанавливающихся подшипников</h3>
+                    <p>Разработал технологию применения регенерационных заклинаний в точном машиностроении, увеличив срок службы деталей в 15 раз.</p>
+                </div>
+                <div class="project">
+                    <h3>Магический ЧПУ-станок</h3>
+                    <p>Создал прототип станка с числовым программным управлением, использующего заклинания точности для обработки материалов с точностью до нанометра.</p>
+                </div>
+                <div class="project">
+                    <h3>Система предсказания поломок оборудования</h3>
+                    <p>Разработал AI-систему, сочетающую магические кристаалы и машинное обучение для предсказания отказов оборудования с точностью 99.3%.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages">
+            <h2>Языки</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Русский</span>
+                        <span>Родной</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Английский</span>
+                        <span>Свободно</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Драконий</span>
+                        <span>Продвинутый</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Эльфийский</span>
+                        <span>Базовый</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Джон Джонс Нурмагомедович. Все права защищены, включая магические.</p>
+            <p>Тел.: +7 (999) 123-45-67 | Email: john.jones@magic.com</p>
+        </div>
+    </footer>
+</body>
+</html>
